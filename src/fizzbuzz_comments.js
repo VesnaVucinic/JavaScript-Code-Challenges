@@ -1,5 +1,5 @@
 // primer za 1 do 100
-for (let i = 1; i <= 100; i++) {
+ for (let i = 1; i <= 100; i++) {
     console.log(i)
   }
   
@@ -180,4 +180,52 @@ for (let i = 1; i <= 100; i++) {
       console.log(i)
     }
   }
+
+ // This is getting quite ugly
+// Repeating yourself like this is a sign of dodgy code.
+// It's clusy, it's a difficult to read and difficult to maintaim.
+// So let's change it around a bit
+for (let i = 1; i <= 100; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)){
+      console.log("FizzBuzz");
+    }
+  }
+  // Let's test for both being true first
+  // Now we can use else statement 
+  // If it's not a multiple of both, is it just a multiple of 3?
+  for (let i = 1; i <= 100; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)){
+      console.log("FizzBuzz");
+    }
+    else if (i % 3 ==0) {
+      console.log("Fizz")
+    }
+  }
+  // and if it's not if is just a multiple of 5?
+  for (let i = 1; i <= 100; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)){
+      console.log("FizzBuzz");
+    }
+    else if (i % 3 ==0) {
+      console.log("Fizz")
+    }
+    else if (i % 5 ==0) {
+      console.log("Buzz")
+    }
+  }
+  // and if it's still not, then we know to just output the number.
+  for (let i = 1; i <= 100; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)){
+      console.log("FizzBuzz");
+    }
+    else if (i % 3 ==0) {
+      console.log("Fizz");
+    }
+    else if (i % 5 ==0) {
+      console.log("Buzz");
+    }
+    else {
+      console.log(i);
+    }
+  } 
 
