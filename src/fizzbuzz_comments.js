@@ -229,3 +229,52 @@ for (let i = 1; i <= 100; i++) {
     }
   } 
 
+// But to me this is still dodgy.
+// If someone say 'okay, now we want it work on multiples of 7, not 5,
+// and that isb common sort of follow-up question for someone like this,
+// you have to remember to change all the 5s.
+// not a problem in section of code this small but once you start working
+// on sometning big, this is really bad practice.
+// Ideally, you shouldn't run the same test twice
+// But, how else can be done?
+// wee we ca ncreate variable output that is just an empty string
+for (let i = 1; i <= 100; i++) {
+    let output = "";
+  }
+  // A blank bit of text, nothing in it.
+  // if i is multiple of 3, you add "Fizz" to that line of text
+  for (let i = 1; i <= 100; i++) {
+    let output = "";
+    if (i % 3 == 0) {output += "Fizz";}
+  }
+  // you don't print output anything yet you just store that for the future
+  // If i is a multiple of 5, you just add "Buzz" to that line of text
+  for (let i = 1; i <= 100; i++) {
+    let output = "";
+    if (i % 3 == 0) {output += "Fizz";}
+    if (i % 5 == 0) {output += "Buzz";}
+  }
+  // Don't replace it just add it
+  // And then don't test the number again - test that string of text output == ""
+  // if it's empty we know those tests were true, so just make the text the value of i.
+  for (let i = 1; i <= 100; i++) {
+    let output = "";
+    if (i % 3 == 0) {output += "Fizz";}
+    if (i % 5 == 0) {output += "Buzz";}
+    if (output == "") {output = i;}
+    console.log(output)
+  }
+  // Now at the and of the loop, you output ... well, the output console.log(output)
+  // and now if you need to change 7 not 5 you just need to change on one obvious place
+  // if they say 'make it work on 3s, 5s, 7s, 11s and 13s'
+  // you just copy and paste that line.
+  for (let i = 1; i <= 100; i++) {
+    let output = "";
+    if (i % 3 == 0) {output += "Fizz";}
+    if (i % 5 == 0) {output += "Buzz";}
+    if (i % 7 == 0) {output += "Fuzz";}
+    if (i % 11 == 0) {output += "Bizz";}
+    if (i % 13 == 0) {output += "Biff";}
+    if (output == "") {output = i;}
+    console.log(output)
+  }
