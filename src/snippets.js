@@ -32,3 +32,31 @@ let result = findAndReplace("I like banana", "banana", "apple"); // I like apple
 // This one convert a color in RGB mode to Hex.
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, "0");
 let hex = RGBToHex(255, 255, 255); // ffffff
+
+// 8. shuffle
+// Do you want to know how any music player can shuffle playing item? This snippet will show you how.
+const shuffle = ([array]) => {
+  let m = array.length;
+  
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [array[m], array[i]] = [array[i], array[m]];
+  }
+  return array;
+};
+shuffle([5, 4, 3, 6, 20]);
+
+// 9. removeFalseValues
+// This snippet removes false values from an array, which include false, undefined, NaN, empty.
+const removeFalseValues = arr => arr.filter(item => item);
+let arr = removeFalseValues([3, 4, false, "", 5, true, undefined, NaN, ""]); // [3, 4, 5, true]
+
+// 10. removeDuplicatedValues
+// This one removes duplicated item from an array.
+const removeDuplicatedValues = array => [new Set(array)];
+let arr = removeDuplicatedValues([5, 3, 2, 5, 6, 1, 1, 6]); // [5, 3, 2, 6, 1]
+
+// 11. getTimeFromDate
+// This snippet returns time in string from a Date object.
+const getTimeFromDate = date => date.toTimeString().slice(0, 8);
+let time = getTimeFromDate(new Date()); // 09:46:08
