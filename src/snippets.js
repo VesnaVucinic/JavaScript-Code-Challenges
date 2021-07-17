@@ -89,3 +89,23 @@ const isValidJSON = string => {
 let check1 = isValidJSON("{“title”: “javascript”, “price”: 14}"); // true
 let check2 = isValidJSON("{“title”: “javascript”, “price”: 14, subtitle}"); // false
 
+// 16. toWords
+// This one is used to convert a given string into an array of words.
+const toWords = (string, pattern = /[^a-zA-Z-]+/) => string.split(pattern).filter(item => item);
+let words = toWords("I want to be come a great programmer"); // [“I”, “want”, “to”, “be”, “come”, “a”, “great”, “programmer”]
+
+// 17. scrollToTop
+// If you’re at the bottom of a long page and you want to scroll up to the top quickly, this snippet can help you in a smoothly way.
+const scrollToTop = () => {
+  const t = document.documentElement.scrollTop || document.body.scrollTop;
+  if (t > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, t - t / 8);
+  }
+};
+
+// 18. isValidNumber
+// This one is used to validate if a number is valid.
+const isValidNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) === n;
+let check1 = isValidNumber(10); // true
+let check2 = isValidNumber("a"); // false
