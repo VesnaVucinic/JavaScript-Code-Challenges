@@ -60,3 +60,32 @@ let arr = removeDuplicatedValues([5, 3, 2, 5, 6, 1, 1, 6]); // [5, 3, 2, 6, 1]
 // This snippet returns time in string from a Date object.
 const getTimeFromDate = date => date.toTimeString().slice(0, 8);
 let time = getTimeFromDate(new Date()); // 09:46:08
+
+// 12. capitalizeAllWords
+// This one capitalizes the first letter of all words in a string.
+const capitalizeAllWords = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+let str = capitalizeAllWords("I love reading book"); // I Love Reading Book
+
+// 13. getDayDiff
+// This one returns the difference in days between two dates.
+const getDayDiff = (date1, date2) => (date2 - date1) / (1000 * 3600 * 24);
+let diff = getDayDiff(new Date("2020–04–01"), new Date("2020–08–15")); // 136
+
+// 14. radianToDegree
+// This one convert an angle from radian to degree.
+const radianToDegree = radian => (radian * 180.0) / Math.PI;
+let degree = radianToDegree(2.3); // 131.78
+
+// 15. isValidJSON
+// This snippet checks if a given string is a valid JSON.
+const isValidJSON = string => {
+  try {
+    JSON.parse(string);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+let check1 = isValidJSON("{“title”: “javascript”, “price”: 14}"); // true
+let check2 = isValidJSON("{“title”: “javascript”, “price”: 14, subtitle}"); // false
+
